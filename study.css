@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f5f5;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.counter {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #666;
+}
+
+.progress-info {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #888;
+    background: #e8f4f8;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.view-only-notice {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    color: #856404;
+    font-size: 14px;
+}
+
+.flashcard-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 300px;
+    perspective: 1000px;
+}
+
+/* Tarjeta base - contenedor principal */
+.flashcard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 250px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+/* Ocultar tarjetas que no están activas */
+.flashcard.hidden {
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+.flashcard.swiped {
+    transform: translateX(100vw) rotate(10deg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #666;
+}
+
+.flashcard-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 300px;
+    perspective: 1000px;
+}
+
+/* Tarjeta base - contenedor principal */
+.flashcard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 250px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+/* Ocultar tarjetas que no están activas */
+.flashcard.hidden {
+    display: none;
+}
+
+/* Efecto de deslizamiento al terminar */
+.flashcard.swiped {
+    transform: translateX(100vw) rotate(10deg);
+    opacity: 0;
+}
+
+/* Contenedor interno para el efecto 3D */
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Aplicar rotación cuando la tarjeta está volteada */
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos comunes para ambas caras */
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    backface-visibility: hidden;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Cara frontal */
+.flashcard-front {
+    transform: rotateY(0deg);
+}
+
+/* Cara posterior - inicialmente rotada 180 grados */
+.flashcard-back {
+    transform: rotateY(180deg);
+    background: #f8f9fa;
+}
+
+/* Estilos para el contenido */
+.flashcard-front h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.flashcard-back p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Botones de control */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 500px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-learned {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-unlearned {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .flashcard-front,
+    .flashcard-back {
+        padding: 20px;
+        min-height: 200px;
+    }
+    
+    .flashcard-front h3 {
+        font-size: 1.3em;
+    }
+    
+    .flashcard-back p {
+        font-size: 1.1em;
+    }
+}

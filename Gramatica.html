@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramática Turca - Recursos de Aprendizaje</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="back-button">
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver
+                </a>
+            </div>
+            <h1 class="page-title">Gramática Turca</h1>
+            <p class="page-subtitle">Domina los fundamentos gramaticales del idioma turco</p>
+        </header>
+
+        <div class="content">
+            <!-- Grammar Topics Section -->
+            <section class="grammar-section">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>
+                    Temas de Gramática
+                </h2>
+                
+                <div class="grammar-cards">
+                    <!-- Presente Simple -->
+                    <div class="grammar-card">
+                        <div class="card-header">
+                            <h3>Gramática: Presente Simple</h3>
+                            <div class="difficulty-badge beginner">Básico</div>
+                        </div>
+                        <p class="card-description">
+                            Aprende a construir oraciones básicas en presente y domina las conjugaciones fundamentales.
+                        </p>
+                        <button class="btn btn-primary" onclick="openExplanation('presente')">
+                            <i class="fas fa-play"></i>
+                            Ver Explicación
+                        </button>
+                    </div>
+
+                    <!-- Casos Nominales -->
+                    <div class="grammar-card">
+                        <div class="card-header">
+                            <h3>Gramática: Casos Nominales</h3>
+                            <div class="difficulty-badge intermediate">Intermedio</div>
+                        </div>
+                        <p class="card-description">
+                            Comprende el sistema de casos en turco y cómo afectan la estructura de las oraciones.
+                        </p>
+                        <button class="btn btn-primary" onclick="openExplanation('casos')">
+                            <i class="fas fa-play"></i>
+                            Ver Explicación
+                        </button>
+                    </div>
+
+                    <!-- Pasado Simple -->
+                    <div class="grammar-card">
+                        <div class="card-header">
+                            <h3>Gramática: Pasado Simple</h3>
+                            <div class="difficulty-badge beginner">Básico</div>
+                        </div>
+                        <p class="card-description">
+                            Domina las formas del pasado en turco y aprende a narrar eventos pasados correctamente.
+                        </p>
+                        <button class="btn btn-primary" onclick="openExplanation('pasado')">
+                            <i class="fas fa-play"></i>
+                            Ver Explicación
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- External Resources Section -->
+            <section class="resources-section">
+                <h2 class="section-title">
+                    <i class="fas fa-globe"></i>
+                    Páginas de Internet
+                </h2>
+                
+                <div class="resources-grid">
+                    <!-- Gramática Resources -->
+                    <div class="resource-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-grammar"></i>
+                            Gramática
+                        </h3>
+                        <ul class="resource-list">
+                            <li class="resource-item">
+                                <a href="https://quizlet.com" target="_blank" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Quizlet
+                                </a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" target="_blank" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Elon
+                                </a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" target="_blank" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    TurkishTextBook
+                                </a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" target="_blank" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    HepTürkçe
+                                </a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="#" target="_blank" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    apitwist
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Dictionary Resources -->
+                    <div class="resource-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-book-open"></i>
+                            Diccionarios
+                        </h3>
+                        <ul class="resource-list">
+                            <li class="resource-item">
+                                <a href="https://sozluk.gov.tr" target="_blank" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Sozluk.gov.tr
+                                </a>
+                            </li>
+                            <li class="resource-item">
+                                <a href="https://wordreference.com" target="_blank" class="resource-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    WordReference
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <span class="Made by ">Made by LatinCTC</span>
+                <i class="fas fa-heart heart-icon"></i>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for Explanations -->
+    <div id="explanationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Explicación</h3>
+                <button class="close-modal" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="modalContent">
+                    <!-- Content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openExplanation(topic) {
+            const modal = document.getElementById('explanationModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            const explanations = {
+                presente: {
+                    title: 'Presente Simple en Turco',
+                    content: `
+                        <h4>Conjugación del Presente Simple</h4>
+                        <p>En turco, el presente simple se forma añadiendo las terminaciones apropiadas al radical del verbo:</p>
+                        <ul>
+                            <li><strong>-ır/-ir/-ur/-ür</strong> para la tercera persona singular</li>
+                            <li><strong>-ız/-iz/-uz/-üz</strong> para la primera persona plural</li>
+                            <li><strong>-sın/-sin/-sun/-sün</strong> para la segunda persona singular</li>
+                        </ul>
+                        <p><strong>Ejemplo con "yapmak" (hacer):</strong></p>
+                        <p>Ben yaparım - Yo hago<br>
+                        Sen yaparsın - Tú haces<br>
+                        O yapar - Él/ella hace</p>
+                    `
+                },
+                casos: {
+                    title: 'Casos Nominales en Turco',
+                    content: `
+                        <h4>Sistema de Casos</h4>
+                        <p>El turco tiene 6 casos principales:</p>
+                        <ul>
+                            <li><strong>Nominativo:</strong> Sujeto de la oración</li>
+                            <li><strong>Acusativo (-ı/-i/-u/-ü):</strong> Objeto directo</li>
+                            <li><strong>Dativo (-a/-e):</strong> Objeto indirecto</li>
+                            <li><strong>Locativo (-da/-de):</strong> Ubicación</li>
+                            <li><strong>Ablativo (-dan/-den):</strong> Movimiento desde</li>
+                            <li><strong>Genitivo (-ın/-in/-un/-ün):</strong> Posesión</li>
+                        </ul>
+                        <p><strong>Ejemplo con "ev" (casa):</strong></p>
+                        <p>ev (nominativo), evi (acusativo), eve (dativo), evde (locativo)</p>
+                    `
+                },
+                pasado: {
+                    title: 'Pasado Simple en Turco',
+                    content: `
+                        <h4>Formación del Pasado Simple</h4>
+                        <p>El pasado simple se forma añadiendo <strong>-dı/-di/-du/-dü</strong> al radical del verbo:</p>
+                        <ul>
+                            <li><strong>-dım/-dim/-dum/-düm</strong> para primera persona singular</li>
+                            <li><strong>-dın/-din/-dun/-dün</strong> para segunda persona singular</li>
+                            <li><strong>-dı/-di/-du/-dü</strong> para tercera persona singular</li>
+                        </ul>
+                        <p><strong>Ejemplo con "gelmek" (venir):</strong></p>
+                        <p>Ben geldim - Yo vine<br>
+                        Sen geldin - Tú viniste<br>
+                        O geldi - Él/ella vino</p>
+                    `
+                }
+            };
+            
+            if (explanations[topic]) {
+                title.textContent = explanations[topic].title;
+                content.innerHTML = explanations[topic].content;
+                modal.style.display = 'flex';
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('explanationModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('explanationModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Add hover effects to resource links
+        document.querySelectorAll('.resource-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

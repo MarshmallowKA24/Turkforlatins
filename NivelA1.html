@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nivel A1 - Recursos de Aprendizaje de Turco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Volver al inicio
+        </a>
+
+        <!-- Header -->
+        <header class="level-page-header">
+            <h1 class="level-title">Nivel A1</h1>
+            <p class="level-description">Fundamentos básicos del idioma turco</p>
+        </header>
+
+        <!-- Content -->
+        <div class="level-content">
+            <div class="pdf-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                    Ver PDF
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Descargar PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- Grammar Section for A1 -->
+        <section class="grammar-section" style="margin-top: 40px;">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Gramática Nivel A1
+            </h2>
+            
+            <div class="grammar-cards">
+                <!-- Var y Yok -->
+                <div class="grammar-card">
+                    <div class="card-header">
+                        <h3>Var y Yok - Existencia</h3>
+                        <div class="difficulty-badge beginner">Básico</div>
+                    </div>
+                    <p class="card-description">
+                        Aprende a expresar existencia y no existencia con "var" (hay/existe) y "yok" (no hay/no existe).
+                    </p>
+                    <button class="btn btn-primary" onclick="openExplanation('var-yok')">
+                        <i class="fas fa-play"></i>
+                        Ver Explicación
+                    </button>
+                </div>
+
+                <!-- Orden de Oraciones -->
+                <div class="grammar-card">
+                    <div class="card-header">
+                        <h3>Orden de las Oraciones</h3>
+                        <div class="difficulty-badge beginner">Básico</div>
+                    </div>
+                    <p class="card-description">
+                        Comprende las diferencias en el orden de palabras entre español y turco (SOV vs SVO).
+                    </p>
+                    <button class="btn btn-primary" onclick="openExplanation('orden-oraciones')">
+                        <i class="fas fa-play"></i>
+                        Ver Explicación
+                    </button>
+                </div>
+
+                <!-- Preguntas Básicas -->
+                <div class="grammar-card">
+                    <div class="card-header">
+                        <h3>Preguntas Básicas</h3>
+                        <div class="difficulty-badge beginner">Básico</div>
+                    </div>
+                    <p class="card-description">
+                        Domina las palabras interrogativas fundamentales: nerede, nerelisin, nereye, neden, ne zaman, ne kadar, kaç.
+                    </p>
+                    <button class="btn btn-primary" onclick="openExplanation('preguntas-basicas')">
+                        <i class="fas fa-play"></i>
+                        Ver Explicación
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <span class="made-with">Made by LatinCTC</span>
+                <i class="fas fa-heart heart-icon"></i>
+            </div>
+            <a href="index.html" class="volver-btn">⬅️ Volver</a>
+        </footer>
+    </div>
+
+    <!-- Modal for Explanations -->
+    <div id="explanationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Explicación</h3>
+                <button class="close-modal" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="modalContent">
+                    <!-- Content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openExplanation(topic) {
+            const modal = document.getElementById('explanationModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            const explanations = {
+                'var-yok': {
+                    title: 'Var y Yok - Expresando Existencia',
+                    content: `
+                        <h4>Uso de Var (Hay/Existe)</h4>
+                        <p><strong>Var</strong> se usa para indicar que algo existe o está presente:</p>
+                        <div class="example-box">
+                            <p><strong>Evde ekmek var.</strong> - Hay pan en casa.</p>
+                            <p><strong>Bugün zaman var.</strong> - Hoy hay tiempo.</p>
+                            <p><strong>Parkta çocuklar var.</strong> - Hay niños en el parque.</p>
+                        </div>
+                        
+                        <h4>Uso de Yok (No hay/No existe)</h4>
+                        <p><strong>Yok</strong> se usa para indicar que algo no existe o no está presente:</p>
+                        <div class="example-box">
+                            <p><strong>Evde ekmek yok.</strong> - No hay pan en casa.</p>
+                            <p><strong>Bugün zaman yok.</strong> - Hoy no hay tiempo.</p>
+                            <p><strong>Parkta çocuk yok.</strong> - No hay niños en el parque.</p>
+                        </div>
+                        
+                        <h4>Estructura</h4>
+                        <p><strong>Lugar/Contexto + Objeto + var/yok</strong></p>
+                        <div class="tip-box">
+                            <i class="fas fa-lightbulb"></i>
+                            <strong>Tip:</strong> "Var" y "yok" siempre van al final de la oración.
+                        </div>
+                    `
+                },
+                'orden-oraciones': {
+                    title: 'Orden de las Oraciones: Turco vs Español',
+                    content: `
+                        <h4>Español: Sujeto + Verbo + Objeto (SVO)</h4>
+                        <div class="example-box">
+                            <p><strong>Yo</strong> <em>como</em> <u>manzanas</u>.</p>
+                            <p><strong>María</strong> <em>lee</em> <u>un libro</u>.</p>
+                        </div>
+                        
+                        <h4>Turco: Sujeto + Objeto + Verbo (SOV)</h4>
+                        <div class="example-box">
+                            <p><strong>Ben</strong> <u>elma</u> <em>yerim</em>. - Yo manzanas como.</p>
+                            <p><strong>Maria</strong> <u>kitap</u> <em>okuyor</em>. - María libro lee.</p>
+                        </div>
+                        
+                        <h4>Comparación Directa</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Español</th>
+                                <th>Turco</th>
+                                <th>Orden literal</th>
+                            </tr>
+                            <tr>
+                                <td>Yo bebo agua</td>
+                                <td>Ben su içerim</td>
+                                <td>Yo agua bebo</td>
+                            </tr>
+                            <tr>
+                                <td>Ella compra pan</td>
+                                <td>O ekmek alır</td>
+                                <td>Ella pan compra</td>
+                            </tr>
+                            <tr>
+                                <td>Nosotros vemos TV</td>
+                                <td>Biz televizyon izleriz</td>
+                                <td>Nosotros televisión vemos</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="tip-box">
+                            <i class="fas fa-lightbulb"></i>
+                            <strong>Regla clave:</strong> En turco, el verbo SIEMPRE va al final de la oración.
+                        </div>
+                    `
+                },
+                'preguntas-basicas': {
+                    title: 'Preguntas Básicas en Turco',
+                    content: `
+                        <h4>Palabras Interrogativas Fundamentales</h4>
+                        
+                        <div class="question-group">
+                            <h5><strong>NEREDE</strong> - ¿Dónde? (ubicación)</h5>
+                            <div class="example-box">
+                                <p><strong>Ev nerede?</strong> - ¿Dónde está la casa?</p>
+                                <p><strong>Telefon nerede?</strong> - ¿Dónde está el teléfono?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="question-group">
+                            <h5><strong>NERELİSİN</strong> - ¿De dónde eres?</h5>
+                            <div class="example-box">
+                                <p><strong>Sen nerelisin?</strong> - ¿De dónde eres?</p>
+                                <p><strong>Ben İspanyalıyım.</strong> - Soy de España.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="question-group">
+                            <h5><strong>NEREYE</strong> - ¿A dónde? (dirección)</h5>
+                            <div class="example-box">
+                                <p><strong>Nereye gidiyorsun?</strong> - ¿A dónde vas?</p>
+                                <p><strong>Okula gidiyorum.</strong> - Voy a la escuela.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="question-group">
+                            <h5><strong>NEDEN</strong> - ¿Por qué?</h5>
+                            <div class="example-box">
+                                <p><strong>Neden gelmedin?</strong> - ¿Por qué no viniste?</p>
+                                <p><strong>Çünkü hastaydım.</strong> - Porque estaba enfermo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="question-group">
+                            <h5><strong>NE ZAMAN</strong> - ¿Cuándo?</h5>
+                            <div class="example-box">
+                                <p><strong>Ne zaman geleceksin?</strong> - ¿Cuándo vendrás?</p>
+                                <p><strong>Yarın geleceğim.</strong> - Vendré mañana.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="question-group">
+                            <h5><strong>NE KADAR</strong> - ¿Cuánto? (cantidad/precio)</h5>
+                            <div class="example-box">
+                                <p><strong>Bu ne kadar?</strong> - ¿Cuánto cuesta esto?</p>
+                                <p><strong>On lira.</strong> - Diez liras.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="question-group">
+                            <h5><strong>KAÇ</strong> - ¿Cuántos/Cuántas?</h5>
+                            <div class="example-box">
+                                <p><strong>Kaç yaşındasın?</strong> - ¿Cuántos años tienes?</p>
+                                <p><strong>Yirmi yaşındayım.</strong> - Tengo veinte años.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <i class="fas fa-lightbulb"></i>
+                            <strong>Tip:</strong> Las palabras interrogativas generalmente van al principio de la oración en turco.
+                        </div>
+                    `
+                }
+            };
+            
+            if (explanations[topic]) {
+                title.textContent = explanations[topic].title;
+                content.innerHTML = explanations[topic].content;
+                modal.style.display = 'flex';
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('explanationModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('explanationModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Button interactions
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
