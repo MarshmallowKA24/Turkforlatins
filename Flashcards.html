@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards Pro - Crea tus Decks de Estudio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎯 Flashcards Pro</h1>
+      <p>Crea y organiza tus tarjetas de estudio en decks personalizados</p>
+    </div>
+
+    <div class="nav-tabs">
+      <button class="nav-tab" data-tab="decks"> Mis Decks</button>
+      <button class="nav-tab" data-tab="create-deck"> Crear Deck</button>
+      <button class="nav-tab" data-tab="create-card"> Crear Tarjeta</button>
+      <button class="nav-tab" data-tab="ai-preview">🤖 IA (Próximamente)</button>
+    </div>
+
+    <div class="content">
+      <!-- Tab: Mis Decks -->
+      <div id="decks" class="tab-content active">
+        <div class="deck-actions">
+          <button class="create-deck-btn" data-tab="create-deck">➕ Crear Nuevo Deck</button>
+        </div>
+        <div id="decks-container" class="deck-grid">
+          <div class="empty-state">
+            <h3>📚 No tienes decks todavía</h3>
+            <p>Crea tu primer deck para comenzar a estudiar</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tab: Crear Deck -->
+      <div id="create-deck" class="tab-content">
+        <div class="form-section">
+          <h2>📚 Crear Nuevo Deck</h2>
+          <form id="deck-form">
+            <div class="form-group">
+              <label for="deck-name">Nombre del Deck</label>
+              <input type="text" id="deck-name" placeholder="Ej: Vocabulario Turco - Nivel 1" required />
+            </div>
+            <div class="form-group">
+              <label for="deck-description">Descripción</label>
+              <textarea id="deck-description" rows="3" placeholder="Describe de qué trata este deck..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="deck-category">Categoría</label>
+              <select id="deck-category">
+                <option value="vocabulario">Vocabulario</option>
+                <option value="gramatica">Gramática</option>
+                <option value="historia">Historia</option>
+                <option value="ciencias">Ciencias</option>
+                <option value="matematicas">Matemáticas</option>
+                <option value="otros">Otros</option>
+              </select>
+            </div>
+            <button type="submit" class="btn">Crear Deck</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab: Crear Tarjeta -->
+      <div id="create-card" class="tab-content">
+        <div class="form-section">
+          <h2>🃏 Crear Nueva Tarjeta</h2>
+          <form id="card-form">
+            <div class="form-group">
+              <label for="card-deck">Seleccionar Deck</label>
+              <select id="card-deck" required>
+                <option value="">Selecciona un deck</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="card-front">Frente de la tarjeta</label>
+              <input type="text" id="card-front" placeholder="Término, pregunta o concepto" required />
+            </div>
+            <div class="form-group">
+              <label for="card-back">Reverso de la tarjeta</label>
+              <textarea id="card-back" rows="3" placeholder="Definición, respuesta o explicación" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Imagen (opcional)</label>
+              <div class="image-upload" id="image-upload">
+                <div id="upload-text">
+                  <p>📷 Haz clic para agregar una imagen</p>
+                  <small>JPG, PNG, GIF - Máx. 5MB</small>
+                </div>
+              </div>
+              <input type="file" id="image-input" accept="image/*" style="display: none;" />
+            </div>
+            <button type="submit" class="btn">Crear Tarjeta</button>
+            <button type="button" class="btn btn-secondary" id="preview-btn">Vista Previa</button>
+          </form>
+        </div>
+
+        <div id="card-preview" style="display: none;">
+          <h3>Vista Previa:</h3>
+          <div class="flashcard" id="preview-card">
+            <div class="flashcard-front">
+              <div id="preview-image"></div>
+              <h3 id="preview-front"></h3>
+            </div>
+            <div class="flashcard-back">
+              <p id="preview-back"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: IA Preview -->
+      <div id="ai-preview" class="tab-content">
+        <div class="ai-preview">
+          <h3>🤖 Generación con Inteligencia Artificial</h3>
+          <p>Próximamente podrás generar flashcards automáticamente con IA. Solo proporciona un tema y nosotros crearemos las tarjetas por ti.</p>
+          <div style="margin: 30px 0;">
+            <h4>Características que estarán disponibles:</h4>
+            <ul style="text-align: left; max-width: 400px; margin: 20px auto;">
+              <li>✨ Generación automática de términos y definiciones</li>
+              <li>🎨 Sugerencias de imágenes relevantes</li>
+              <li>🎯 Adaptación al nivel de dificultad</li>
+              <li>🌍 Soporte para múltiples idiomas</li>
+              <li>📊 Optimización basada en tu progreso</li>
+            </ul>
+          </div>
+          <div class="coming-soon">🚀 Próximamente</div>
+        </div>
+      </div>
+    </div> <!-- fin .content -->
+
+    <!-- Botón Volver -->
+    <a href="index.html" class="volver-btn">⬅️ Volver</a>
+  </div> <!-- fin .container -->
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+
+</body>
+</html>
